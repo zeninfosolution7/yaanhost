@@ -1,0 +1,23 @@
+ubuntu@sandbox:~/yaanhost-website $ cd /home/ubuntu/yaanhost-website && pnpm test 2>&1 | tail -50
+> yaanhost-website@1.0.0 test /home/ubuntu/yaanhost-website
+> vitest run
+ RUN  v2.1.9 /home/ubuntu/yaanhost-website
+ ✓ server/auth.logout.test.ts (1 test) 5ms
+stderr | server/domains.test.ts > Hosting Operations > orderPlan > should throw error for invalid plan in order
+Error ordering hosting plan: Error: Plan not found
+    at /home/ubuntu/yaanhost-website/server/routers.ts:288:19
+    at resolveMiddleware (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/procedureBuilder.ts:571:28)
+    at callRecursive (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/procedureBuilder.ts:633:26)
+    at Object.next (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/procedureBuilder.ts:646:16)
+    at inputValidatorMiddleware (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/middleware.ts:206:19)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at callRecursive (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/procedureBuilder.ts:633:20)
+    at procedure (file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/procedureBuilder.ts:673:20)
+    at file:///home/ubuntu/yaanhost-website/node_modules/.pnpm/@trpc+server@11.6.0_typescript@5.9.3/node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:474:20
+    at /home/ubuntu/yaanhost-website/server/domains.test.ts:304:7
+ ✓ server/domains.test.ts (22 tests) 42ms
+ Test Files  2 passed (2)
+      Tests  23 passed (23)
+   Start at  12:32:41
+   Duration  611ms (transform 193ms, setup 0ms, collect 524ms, tests 47ms, environment 1ms, prepare 228ms)
+ubuntu@sandbox:~/yaanhost-website $
